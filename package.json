@@ -10,16 +10,35 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:autobib.helloWorld"
+		"onCommand:autobib.clip",
+		"onCommand:autobib.search"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "autobib.helloWorld",
-				"title": "Hello World"
+				"command": "autobib.clip",
+				"title": "clip",
+				"category": "autobib"
+			},
+			{
+				"command": "autobib.search",
+				"title": "search",
+				"category": "autobib"
 			}
-		]
+		],
+		"keybindings": [
+            {
+                "command": "autobib.clip",
+                "key": "ctrl+alt+c",
+                "mac": "shift+cmd+c"
+            },
+            {
+                "command": "autobib.search",
+                "key": "ctrl+alt+g",
+                "mac": "shift+cmd+g"
+            }
+        ]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
