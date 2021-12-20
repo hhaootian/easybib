@@ -1,70 +1,29 @@
-# autobib README
+# <img src="https://github.com/htian97/autobib/blob/main/icons/icon.png" width="150">  
+[![Test Actions Status](https://github.com/platinumjesus/vscode-advanced-search-extension/workflows/Test/badge.svg)](https://github.com/platinumjesus/vscode-advanced-search-extension/actions)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
-This is the README for your extension "autobib". After writing up a brief description, we recommend including the following sections.
+Make <img src="https://render.githubusercontent.com/render/math?math=\LaTeX"> bib easier.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Trigger web search on Google Scholar.
+- Auto paste BibTeX to local bib file.
 
-For example if there is an image subfolder under your extension project workspace:
+## Commands
 
-\!\[feature X\]\(images/feature-x.png\)
+- Search on Google Scholar
+  - View Command Palette (<kbd>⇧ Shift</kbd>+<kbd>⌘ Command</kbd>+<kbd>P</kbd>), type & select `autobib: search`
+  - Or use hotkey <kbd>⇧ Shift</kbd>+<kbd>⌘ Command</kbd>+<kbd>G</kbd>
+- Paste to bib file
+  - View Command Palette (<kbd>⇧ Shift</kbd>+<kbd>⌘ Command</kbd>+<kbd>P</kbd>), type & select `autobib: clip`
+  - Or use hotkey <kbd>⇧ Shift</kbd>+<kbd>⌘ Command</kbd>+<kbd>C</kbd>
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Usage
 
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+1. Search: in the popup input box, type title / author / keywords, just as using Google Scholar. Once entered, you will be redirected to the webpage.
+2. Copy: Choose the paper you want, click <kbd>\" Cite</kbd> - <kbd>BibTeX</kbd>.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- Local bib file has to be named as `ref.bib` which is currently hardcoded in scripts.
