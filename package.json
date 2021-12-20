@@ -1,8 +1,16 @@
 {
 	"name": "autobib",
 	"displayName": "autobib",
-	"description": "",
+	"description": "make LaTeX bib easier",
 	"version": "0.0.1",
+	"publisher": "htian97",
+	"icon": "icons/icon.png",
+	"license": "GPLv3",
+	"repository": {
+        "url": "https://github.com/htian97/autobib",
+        "type": "git"
+    },
+	"homepage": "https://github.com/htian97/autobib",
 	"engines": {
 		"vscode": "^1.63.0"
 	},
