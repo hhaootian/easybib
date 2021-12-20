@@ -21,8 +21,9 @@ Make <img src="https://render.githubusercontent.com/render/math?math=\LaTeX"> bi
 
 ## Usage
 
-1. Search: in the popup input box, type title / author / keywords, just as using Google Scholar. Once entered, you will be redirected to the webpage.
-2. Copy: Choose the paper you want, click <kbd>\" Cite</kbd> - <kbd>BibTeX</kbd>.
+1. Search: do `search` command, in the popup input box, type title / author / keywords, just as using Google Scholar. Once entered, you will be redirected to the webpage.
+2. Copy: choose the paper you want, click <kbd>\" Cite</kbd> - <kbd>BibTeX</kbd>, copy the bib text.
+3. Paste: go back to VS Code window, do `clip` command. If successful, the bib text will be copied to the ref.bib file in the same directory of txt file. A message will show up with the citekey. 
 
 ## Known Issues
 
