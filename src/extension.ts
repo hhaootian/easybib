@@ -3,8 +3,8 @@ import clip from './clip';
 import searchBox from './search';
 
 export function activate(context: vscode.ExtensionContext) {
-    let clipCommand = vscode.commands.registerCommand('autobib.clip', () => clip());
-    let searchCommand = vscode.commands.registerCommand("autobib.search", () => searchBox());
+    let clipCommand = vscode.commands.registerCommand('easybib.clip', () => clip());
+    let searchCommand = vscode.commands.registerCommand("easybib.search", () => searchBox());
 
     context.subscriptions.push(clipCommand);
     context.subscriptions.push(searchCommand);
