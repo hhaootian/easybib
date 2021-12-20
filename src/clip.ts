@@ -8,23 +8,32 @@ function clip() {
         (clipboardContent) => {
             let workSpace = vscode.workspace.workspaceFolders;
             if (workSpace && workSpace[0]) {
-                // currently hardcode bib filename
-                let filePath = workSpace[0].uri.path + "/ref.bib";
+                let workPath = workSpace[0].uri.path + "/";
+                let fileName = "";
 
                 const fs = require('fs');
-                fs.appendFileSync(filePath, `\n${clipboardContent}\n`);
+                fs.readdirSync(workPath).forEach((file: string) => {
+                    if (file.substring(file.length - 3) === "bib") {
+                        fileName = file;
+                    }
+                });
 
-                // pop up notice
-                let title = clipboardContent.split(",")[0].split("{")[1];
-                // no need for notice
-                // vscode.window.showInformationMessage("added: " + title);
+                // if no such bib file, create as ref.bib
+                if (fileName === "") {
+                    fileName = "ref.bib";
+                }
+
+                fs.appendFileSync(workPath + fileName, `\n${clipboardContent}\n`);
+
+                // citekey for BibTeX
+                let citeKey = clipboardContent.split(",")[0].split("{")[1];
 
                 let textEditor = vscode.window.activeTextEditor;
                 if (textEditor !== undefined) {
                     let uri = textEditor.document.uri;
                     let edit = new vscode.WorkspaceEdit();
 
-                    edit.insert(uri, textEditor.selection.active, title);
+                    edit.insert(uri, textEditor.selection.active, citeKey);
                     vscode.workspace.applyEdit(edit);
                 }
             }
