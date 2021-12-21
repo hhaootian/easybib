@@ -1,41 +1,25 @@
 import * as vscode from 'vscode';
+import doi from "./doi";
 
 /**
- * Write clipboard to bib file.
+ * Paste citekey to bib file.
  */
 function clip() {
     vscode.env.clipboard.readText().then(
         (clipboardContent) => {
-            let workSpace = vscode.workspace.workspaceFolders;
-            if (workSpace && workSpace[0]) {
-                let workPath = workSpace[0].uri.path + "/";
-                let fileName = "";
+            // async find DOI and paste to bib file
+            doi(clipboardContent);
 
-                const fs = require('fs');
-                fs.readdirSync(workPath).forEach((file: string) => {
-                    if (file.substring(file.length - 3) === "bib") {
-                        fileName = file;
-                    }
-                });
+            let citeKey = clipboardContent.split(",")[0].split("{")[1];
 
-                // if no such bib file, create as ref.bib
-                if (fileName === "") {
-                    fileName = "ref.bib";
-                }
+            let textEditor = vscode.window.activeTextEditor;
+            if (textEditor !== undefined) {
+                let uri = textEditor.document.uri;
+                let edit = new vscode.WorkspaceEdit();
 
-                fs.appendFileSync(workPath + fileName, `\n${clipboardContent}\n`);
-
-                // citekey for BibTeX
-                let citeKey = clipboardContent.split(",")[0].split("{")[1];
-
-                let textEditor = vscode.window.activeTextEditor;
-                if (textEditor !== undefined) {
-                    let uri = textEditor.document.uri;
-                    let edit = new vscode.WorkspaceEdit();
-
-                    edit.insert(uri, textEditor.selection.active, citeKey);
-                    vscode.workspace.applyEdit(edit);
-                }
+                // insert to current cursor position
+                edit.insert(uri, textEditor.selection.active, citeKey);
+                vscode.workspace.applyEdit(edit);
             }
         }
     );
