@@ -8,8 +8,9 @@ Make LaTeX bib easier.
 ## Features
 
 - Trigger web search on Google Scholar.
-- Paste BibTeX info to local bib file.
-- Auto paste BibTeX citekey to cursor. 
+- Paste BibTeX citekey to cursor.
+- Paste BibTeX text to local bib file.
+- Find DOI and add to BibTeX entry.
 
 ## Commands
 
@@ -24,4 +25,4 @@ Make LaTeX bib easier.
 
 1. Search: do `search` command, in the popup input box, type title / author / keywords, just like using Google Scholar. Once entered, you will be redirected to the webpage.
 2. Copy: choose the paper you want, click <kbd>\" Cite</kbd> - <kbd>BibTeX</kbd>, copy the bib text.
-3. Paste: go back to VS Code window, do `clip` command. If successful, the BibTeX will be copied to the local bib file in the same directory of tex file. If there is no bib file, easybib will create a new one named as ref.bib. 
+3. Paste: go back to VS Code window, do `clip` command. If successful, the BibTeX will be copied to the local bib file in the same directory of tex file. If there is no bib file, easybib will create a new one named as ref.bib.
