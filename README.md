@@ -9,8 +9,8 @@ Make LaTeX bib easier.
 
 - Trigger web search on Google Scholar.
 - Paste BibTeX citekey to cursor.
+- Find and add DOI to BibTeX entry.
 - Paste BibTeX text to local bib file.
-- Find DOI and add to BibTeX entry.
 
 ## Commands
 
