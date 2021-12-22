@@ -32,15 +32,23 @@ async function doi(clipboardContent: string) {
 
         axios.get(url)
         .then(function (response) {
-            // get the most possible doi
-            let doi = response.data['message']['items'][0]["DOI"];
+            let message = response.data['message']['items'][0];
+            let doi = message['DOI'];
 
+            // if it is preprint
+            // try to use journal DOI instead
+            if (message.hasOwnProperty("relation") && 
+            message['relation'].hasOwnProperty("is-preprint-of")
+            ) {
+                doi = message['relation']['is-preprint-of']['0']['id'];
+            }
+    
             clipboardContent = clipboardContent.substring(
                 0, clipboardContent.length - 2
             ) + `,\n  doi={${doi}}\n}`;
         })
-        .catch(function (error) {
-            console.log(error);
+        .catch(function () {
+            // not add DOI
         })
         .then(() => {
             // write to file
