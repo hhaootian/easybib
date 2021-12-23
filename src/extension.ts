@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import clip from './clip';
-import searchBox from './search';
+import searchBox from './SearchBox';
 
 export function activate(context: vscode.ExtensionContext) {
     let clipCommand = vscode.commands.registerCommand('easybib.clip', () => clip());

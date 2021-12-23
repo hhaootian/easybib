@@ -4,7 +4,7 @@ import axios from "axios";
 /**
  * Search DOI given BibTeX info.
  */
-async function doi(clipboardContent: string) {
+async function findDoi(clipboardContent: string) {
     let workSpace = vscode.workspace.workspaceFolders;
     if (workSpace && workSpace[0]) {
         let workPath = workSpace[0].uri.path + "/";
@@ -57,4 +57,4 @@ async function doi(clipboardContent: string) {
     }
 }
 
-export default doi;
+export default findDoi;
