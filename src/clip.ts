@@ -8,6 +8,11 @@ import pasteCursor from './PasteCursor';
 function clip() {
     vscode.env.clipboard.readText().then(
         (clipboardContent) => {
+            // error handling
+            if (clipboardContent[0] !== "@") {
+                return;
+            }
+
             // async find DOI and paste to bib file
             findDoi(clipboardContent);
 
