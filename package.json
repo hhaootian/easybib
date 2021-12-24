@@ -2,7 +2,7 @@
 	"name": "easybib",
 	"displayName": "easybib",
 	"description": "make LaTeX bib easier",
-	"version": "0.0.4",
+	"version": "0.1.0",
 	"publisher": "htian97",
 	"icon": "icons/icon.png",
 	"license": "GPLv3",
@@ -18,20 +18,20 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:easybib.search"
+		"onCommand:easybib.lookup"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "easybib.search",
-				"title": "search",
+				"command": "easybib.lookup",
+				"title": "lookup",
 				"category": "easybib"
 			}
 		],
 		"keybindings": [
 			{
-				"command": "easybib.search",
+				"command": "easybib.lookup",
 				"key": "ctrl+alt+l",
 				"mac": "shift+cmd+l"
 			}

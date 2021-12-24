@@ -15,11 +15,11 @@ All in one:
 
 ## Commands
 
-- View Command Palette (<kbd>⇧ Shift</kbd>+<kbd>⌘ Command</kbd>+<kbd>P</kbd>), type & select `easybib: search`
+- View Command Palette (<kbd>⇧ Shift</kbd>+<kbd>⌘ Command</kbd>+<kbd>P</kbd>), type & select `easybib: lookup`
 - Or use hotkey <kbd>⇧ Shift</kbd>+<kbd>⌘ Command</kbd>+<kbd>L</kbd>
 
 ## Usage
 
-1. Do `search` command. In the prompt box, type paper title.
+1. Do `lookup` command. In the prompt box, type paper title.
 2. In result list, click the paper you want.
 3. Wait for several seconds and you are done.

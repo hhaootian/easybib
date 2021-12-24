@@ -13,7 +13,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 ### Changed
 
 - Use Semantic Scholar API.
-- Remove `Clip` command.
+- Remove `clip` command.
+- Renamed `Search` command to `loopup`.
 
 ## [0.0.3] - 2021-12-22
 
@@ -25,7 +26,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Changed
 
-- Split `Clip` into two parts: sync paste citekey and async paste BibTeX.
+- Split `clip` into two parts: sync paste citekey and async paste BibTeX.
 
 ### Added
 
