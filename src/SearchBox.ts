@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import webScraping from "./WebScraping";
 
 /**
- * Search on Google Scholar.
+ * Popup search box.
  */
 async function searchBox() {
     var searchQuery = await vscode.window.showInputBox({

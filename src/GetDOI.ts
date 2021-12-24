@@ -2,6 +2,10 @@ import axios from "axios";
 import writeBib from "./WriteBib";
 import pasteCursor from "./PasteCursor";
 
+/**
+ * Get DOI with given title.
+ * @param title 
+ */
 function getDOI(title: string) {
     let crossref = "https://api.crossref.org/works?query.bibliographic=";
     let url = crossref + `"${title}"`;
@@ -9,6 +13,12 @@ function getDOI(title: string) {
     axios.get(url)
     .then(function (response) {
         let message = response.data['message']['items'][0];
+
+        // error if titles are not the same
+        if (message['title'][0] !== title) {
+            return;
+        }
+
         let doi = message['DOI'];
 
         // if it is preprint
@@ -24,9 +34,13 @@ function getDOI(title: string) {
     });
 }
 
-
+/**
+ * Convert DOI to BibTeX.
+ * @param doi 
+ */
 function doiToBib(doi: string) {
-        let url =  `http://api.crossref.org/works/${doi}/transform/application/x-bibtex`;
+        let url = `http://api.crossref.org/works/${doi}/` +
+                      `transform/application/x-bibtex`;
 
         axios.get(url, {timeout: 500})
         .then(function (response) {
@@ -38,6 +52,7 @@ function doiToBib(doi: string) {
             writeBib(bibtex);
         })
         .catch(function () {
+            // if timeout keep refreshing
             doiToBib(doi);
         });
 }

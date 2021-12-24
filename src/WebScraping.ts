@@ -1,5 +1,9 @@
 import showList from "./ShowList";
 
+/**
+ * Do web scraping with search query.
+ * @param searchQuery 
+ */
 function webScraping(searchQuery) {
     const https = require('https');
     var titleList = new Map();

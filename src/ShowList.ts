@@ -1,6 +1,10 @@
 import * as vscode from 'vscode';
 import getDOI from './GetDOI';
 
+/**
+ * Show title list.
+ * @param titleList 
+ */
 function showList(titleList) {
     let items: vscode.QuickPickItem[] = [];
 

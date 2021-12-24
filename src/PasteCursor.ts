@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 
 /**
- * Paste to cursor file.
+ * Paste to cursor.
  */
 function pasteCursor(text: string) {
     let textEditor = vscode.window.activeTextEditor;

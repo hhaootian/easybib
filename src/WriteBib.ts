@@ -1,6 +1,10 @@
 import * as vscode from 'vscode';
 
-function writeBib(bibtex) {
+/**
+ * Write BibTeX to local bib file.
+ * @param bibtex 
+ */
+function writeBib(bibtex: string) {
     let workSpace = vscode.workspace.workspaceFolders;
 
     if (workSpace && workSpace[0]) {
@@ -15,7 +19,7 @@ function writeBib(bibtex) {
             }
         });
 
-        // if no such bib file, create as ref.bib
+        // if no bib file, create one as ref.bib
         if (fileName === "") {
             fileName = "ref.bib";
         }
