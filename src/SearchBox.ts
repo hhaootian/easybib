@@ -7,7 +7,7 @@ import webScraping from "./WebScraping";
 async function searchBox() {
     var searchQuery = await vscode.window.showInputBox({
         placeHolder: "Search query",
-        prompt: "Search on Google Scholar"
+        prompt: "Search on Semantic Scholar"
     });
 
     if (searchQuery !== undefined) {
