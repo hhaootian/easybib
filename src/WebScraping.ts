@@ -5,8 +5,8 @@ function webScraping(searchQuery) {
     var titleList = new Map();
 
     var options = {
-        host: 'scholar.google.com',
-        path: `/scholar?hl=en&q=${searchQuery}`,
+        host: 'api.semanticscholar.org',
+        path: `/graph/v1/paper/search?query=${searchQuery}&fields=title`,
         method: 'GET'
     };
 
@@ -19,27 +19,16 @@ function webScraping(searchQuery) {
         });
 
         response.on('end', function () {
-            let exp = '<h3 class=".*?" ontouchstart=".*?">' +
-            '.*?<a id=.*? href=".*?">.*?</a></h3>';
+            let exp = '"title": ".*?"';
             const regexp = new RegExp(exp, 'g');
             const matches = htmls.matchAll(regexp);
             let idx = 1;
 
             for (const match of matches) {
                 let htmlPiece = match[0];
-
-                let tags = ["<b>", "</b>", "<i>", "</i>"];
-                for (const tag of tags) {
-                    htmlPiece = htmlPiece.replaceAll(tag, "");
-                }
-
-                // remove "</a></h3>"
-                htmlPiece = htmlPiece.substring(0, htmlPiece.length - 9);
-                let splits = htmlPiece.split(">");
-
-                var title = splits[splits.length - 1];
+                let splits = htmlPiece.split('\"');
+                var title = splits[splits.length - 2];
                 titleList[idx] = title.valueOf();
-
                 idx ++;
             }
 
