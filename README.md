@@ -21,5 +21,7 @@ All in one:
 ## Usage
 
 1. Do `lookup` command. In the prompt box, type paper title.
+<img src="https://nbviewer.org/github/htian97/autobib/blob/main/demo/box.png" width="400">
 2. In result list, click the paper you want.
+<img src="https://nbviewer.org/github/htian97/autobib/blob/main/demo/list.png" width="400">
 3. Wait for several seconds and you are done.
