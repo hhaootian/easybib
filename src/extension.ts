@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import searchBox from './SearchBox';
+import searchBox from './search_box';
 
 export function activate(context: vscode.ExtensionContext) {
     let searchCommand = vscode.commands.registerCommand(

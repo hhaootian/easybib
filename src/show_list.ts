@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import getDOI from './GetDOI';
+import getDOI from './get_doi';
 
 /**
  * Show title list.

@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import webScraping from "./WebScraping";
+import webScraping from "./web_scraping";
 
 /**
  * Popup search box.

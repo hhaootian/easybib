@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import showList from "./ShowList";
+import showList from "./show_list";
 import * as config from './config';
 
 /**

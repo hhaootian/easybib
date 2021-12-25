@@ -1,6 +1,6 @@
 import axios from "axios";
-import writeBib from "./WriteBib";
-import pasteCursor from "./PasteCursor";
+import writeBib from "./write_bib";
+import pasteCursor from "./paste_cursor";
 
 /**
  * Get DOI with given title.
