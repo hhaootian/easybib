@@ -2,7 +2,7 @@
 	"name": "easybib",
 	"displayName": "easybib",
 	"description": "make LaTeX bib easier",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"publisher": "htian97",
 	"icon": "icons/icon.png",
 	"license": "GPLv3",
@@ -37,32 +37,32 @@
 			}
 		],
 		"configuration": {
-            "title": "easybib",
-            "type": "object",
-            "properties": {
-                "easybib.entryLimit": {
-                    "title": "Entry limit",
+			"title": "easybib",
+			"type": "object",
+			"properties": {
+				"easybib.entryLimit": {
+					"title": "Entry limit",
 					"description": "Maximum entry limit to show search results.",
-                    "type": "number",
-                    "default": 10
-                },
+					"type": "number",
+					"default": 10
+				},
 				"easybib.includeTitleField": {
 					"title": "Include title field for searching",
 					"description": "Check this to include title field for searching.",
-                    "type": "boolean",
-                    "default": true
+					"type": "boolean",
+					"default": true
 				},
 				"easybib.includeAuthorField": {
 					"title": "Include author field for searching",
 					"description": "Check this to include author field for searching.",
-                    "type": "boolean",
-                    "default": false
+					"type": "boolean",
+					"default": false
 				},
 				"easybib.bibName": {
 					"title": "Default bib file name",
 					"description": "Default bib file name if there is none.",
-                    "type": "string",
-                    "default": "ref.bib"
+					"type": "string",
+					"default": "ref.bib"
 				}
 			}
 		}
