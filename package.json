@@ -35,7 +35,31 @@
 				"key": "ctrl+alt+l",
 				"mac": "shift+cmd+l"
 			}
-		]
+		],
+		"configuration": {
+            "title": "easybib",
+            "type": "object",
+            "properties": {
+                "easybib.entryLimit": {
+                    "title": "Entry limit",
+					"description": "Maximum entry limit to show search results.",
+                    "type": "number",
+                    "default": 10
+                },
+				"easybib.includeTitleField": {
+					"title": "Include title field for searching",
+					"description": "Check this to include title field for searching.",
+                    "type": "boolean",
+                    "default": true
+				},
+				"easybib.includeAuthorField": {
+					"title": "Include author field for searching",
+					"description": "Check this to include author field for searching.",
+                    "type": "boolean",
+                    "default": false
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

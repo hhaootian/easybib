@@ -1,4 +1,6 @@
+import * as vscode from 'vscode';
 import showList from "./ShowList";
+import * as config from './config';
 
 /**
  * Do web scraping with search query.
@@ -8,9 +10,15 @@ function webScraping(searchQuery) {
     const https = require('https');
     var titleList = new Map();
 
+    let fields = getFields();
+    if (fields === ""){
+        return;
+    }
+
     var options = {
         host: 'api.semanticscholar.org',
-        path: `/graph/v1/paper/search?query=${searchQuery}&fields=title`,
+        path: `/graph/v1/paper/search?query=${searchQuery}` + 
+                  `&fields=${fields}&limit=${config.getEntryLimit()}`,
         method: 'GET'
     };
 
@@ -44,5 +52,36 @@ function webScraping(searchQuery) {
     request.end();
 
 };
+
+/**
+ * Get search fields.
+ * @returns 
+ */
+function getFields() {
+    let fields = "";
+    if (config.getTitleField()) {
+        fields += "title";
+    } else {
+        vscode.window.showWarningMessage(
+            "It is suggested to include the title field."
+        );
+    }
+
+    if (config.getAuthorField()) {
+        if (fields !== "") {
+            fields += ",authors";
+        } else {
+            fields += "authors";
+        }
+    }
+
+    if (fields === "") {
+        vscode.window.showErrorMessage(
+            "Empty search field. Please check config!"
+        );
+    }
+
+    return fields;
+}
 
 export default webScraping;
