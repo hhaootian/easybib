@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import * as config from './config';
 
 /**
  * Write BibTeX to local bib file.
@@ -19,9 +20,14 @@ function writeBib(bibtex: string) {
             }
         });
 
-        // if no bib file, create one as ref.bib
+        // if no bib file, create one with default name
         if (fileName === "") {
-            fileName = "ref.bib";
+            let defaultBibName = config.getBibName();
+            if (defaultBibName !== undefined) {
+                fileName = defaultBibName;
+            } else {
+                vscode.window.showErrorMessage("No default bib filename.");
+            }
         }
 
         fs.appendFileSync(workPath + fileName, `\n${bibtex}\n`);

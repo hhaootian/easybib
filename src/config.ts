@@ -1,7 +1,10 @@
 import { workspace, WorkspaceConfiguration } from 'vscode';
 
 export const EXTENSION_NAME = "easybib";
-const getConfig = (): WorkspaceConfiguration => workspace.getConfiguration(EXTENSION_NAME);
+
+function getConfig(): WorkspaceConfiguration {
+    return workspace.getConfiguration(EXTENSION_NAME);
+}
 
 export function getEntryLimit(): number | undefined {
     return getConfig().get("entryLimit");
@@ -13,4 +16,8 @@ export function getTitleField(): boolean | undefined {
 
 export function getAuthorField(): boolean | undefined {
     return getConfig().get("includeAuthorField");
+}
+
+export function getBibName(): string | undefined {
+    return getConfig().get("bibName");
 }
