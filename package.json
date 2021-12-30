@@ -2,7 +2,7 @@
 	"name": "easybib",
 	"displayName": "easybib",
 	"description": "make LaTeX bib easier",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"publisher": "htian97",
 	"icon": "icons/icon.png",
 	"license": "GPLv3",
