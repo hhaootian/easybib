@@ -58,6 +58,18 @@
 					"type": "boolean",
 					"default": false
 				},
+				"easybib.includeAbstractField": {
+					"title": "Include abstract for searching",
+					"description": "Check this to include abstract for searching.",
+					"type": "boolean",
+					"default": false
+				},
+				"easybib.includeYearField": {
+					"title": "Include year for searching",
+					"description": "Check this to include year for searching.",
+					"type": "boolean",
+					"default": false
+				},
 				"easybib.bibName": {
 					"title": "Default bib file name",
 					"description": "Default bib file name if there is none.",

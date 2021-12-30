@@ -18,6 +18,14 @@ export function getAuthorField(): boolean | undefined {
     return getConfig().get("includeAuthorField");
 }
 
+export function getAbstractField(): boolean | undefined {
+    return getConfig().get("includeAbstractField");
+}
+
+export function getYearField(): boolean | undefined {
+    return getConfig().get("includeYearField");
+}
+
 export function getBibName(): string | undefined {
     return getConfig().get("bibName");
 }

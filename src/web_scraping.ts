@@ -69,10 +69,23 @@ function getFields() {
 
     if (config.getAuthorField()) {
         if (fields !== "") {
-            fields += ",authors";
-        } else {
-            fields += "authors";
+            fields += ",";
         }
+        fields += "authors";
+    }
+
+    if (config.getAbstractField()) {
+        if (fields !== "") {
+            fields += ",";
+        }
+        fields += "abstract";
+    }
+
+    if (config.getYearField()) {
+        if (fields !== "") {
+            fields += ",";
+        }
+        fields += "year";
     }
 
     if (fields === "") {
