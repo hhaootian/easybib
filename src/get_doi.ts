@@ -13,12 +13,6 @@ function getDOI(title: string) {
     axios.get(url)
     .then(function (response) {
         let message = response.data['message']['items'][0];
-
-        // error if titles are not the same
-        if (message['title'][0] !== title) {
-            return;
-        }
-
         let doi = message['DOI'];
 
         // if it is preprint
