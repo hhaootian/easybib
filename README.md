@@ -20,6 +20,8 @@ All in one:
 
 ## Usage
 
+- In VS Code, open your workplace folder that has tex file. 
+
 - Do `lookup` command. In the prompt box, type paper title.
 
 <img src="https://nbviewer.org/github/htian97/autobib/blob/main/demo/box.png" width="500">
