@@ -5,13 +5,14 @@ import getDOI from './get_doi';
  * Show title list.
  * @param titleList 
  */
-function showList(titleList) {
+function showList(titleList, authorList, venueList) {
     let items: vscode.QuickPickItem[] = [];
 
-    for (let idx = 1; idx.toString() in titleList; idx++) {
+    for (let idx = 0; idx.toString() in titleList; idx++) {
         items.push({ 
-            label: idx.toString(),
-            description: titleList[idx]
+            label: (idx + 1).toString(),
+            description: titleList[idx],
+            detail: authorList[idx] + " " + venueList[idx],
         });
     }
 
@@ -20,7 +21,7 @@ function showList(titleList) {
             return;
         }
 
-        getDOI(titleList[parseInt(selection.label)]);
+        getDOI(titleList[parseInt(selection.label) - 1]);
 
     });
 }
