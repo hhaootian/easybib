@@ -1,10 +1,10 @@
-import * as vscode from 'vscode';
 import showList from "./show_list";
+import getFields from "./get_fields";
 import * as config from './config';
 
 /**
  * Do web scraping with search query.
- * @param searchQuery 
+ * @param searchQuery
  */
 function webScraping(searchQuery) {
     const https = require('https');
@@ -60,50 +60,6 @@ function webScraping(searchQuery) {
 
 };
 
-/**
- * Get search fields.
- * @returns 
- */
-function getFields() {
-    let fields = "";
-    if (config.getTitleField()) {
-        fields += "title";
-    } else {
-        vscode.window.showWarningMessage(
-            "It is suggested to include the title field."
-        );
-    }
-
-    if (config.getAuthorField()) {
-        if (fields !== "") {
-            fields += ",";
-        }
-        fields += "authors";
-    }
-
-    if (config.getAbstractField()) {
-        if (fields !== "") {
-            fields += ",";
-        }
-        fields += "abstract";
-    }
-
-    if (config.getYearField()) {
-        if (fields !== "") {
-            fields += ",";
-        }
-        fields += "year";
-    }
-
-    if (fields === "") {
-        vscode.window.showErrorMessage(
-            "Empty search field. Please check config!"
-        );
-    }
-
-    return fields;
-}
-
 
 function getDetails(options) {
     return new Promise((resolve, reject) => {
@@ -122,12 +78,10 @@ function getDetails(options) {
                     let data = JSON.parse(htmls);
                     let authors = "";
                     let venue = data['venue'];
-
                     for (let idx = 0; idx < data['authors'].length; idx++) {
                         authors += data['authors'][idx]['name'] + "; ";
                     }
                     authors = authors.substring(0, authors.length - 2);
-
                     resolve(authors + "|" + venue);
                 } catch (e) {
                     reject(e);
@@ -137,7 +91,6 @@ function getDetails(options) {
             response.on('error', (err) => {
                 reject(err);
             });
-
         });
 
         request.end();

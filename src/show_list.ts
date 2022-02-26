@@ -3,7 +3,9 @@ import getDOI from './get_doi';
 
 /**
  * Show title list.
- * @param titleList 
+ * @param titleList
+ * @param authorList
+ * @param venueList
  */
 function showList(titleList, authorList, venueList) {
     let items: vscode.QuickPickItem[] = [];
